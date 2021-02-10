@@ -23,11 +23,14 @@
 
 <body>
   <div id="app" class="max-w-xl mx-10 my-10 space-y-3">
-    <h1 class="text-xl">Photo Gallery ({{countUndone}})</h1>
+    <h1 class="text-xl">Photo Gallery ({{countPic}}) Your Like ({{countLike}})</h1>
     <ul>
       <li v-for="(slot,index) in users" class="mt-5 ">
         <img :src="slot.profile" class="rounded-full w-10 h-10 mb-3 object-cover">
         <img :src="slot.pic" width="200" class="rounded-lg mb-3 mx-10" v-on:click="toggleDone(index)">
+        <span>
+          {{slot.count}}
+        </span>
         <span v-show="slot.like" class="material-icons"v-on:click="toggleDone(index)">
             favorite
         </span>
